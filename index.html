@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Koko ♡</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "Trebuchet MS", Arial, sans-serif;
+        background: #f7f8f2;
+        color: #40513b;
+        overflow-x: hidden;
+    }
+
+    /* NAVIGATION */
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(247, 248, 242, 0.9);
+        backdrop-filter: blur(10px);
+        padding: 18px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        border-bottom: 1px solid #d7e0d0;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+        color: #66785d;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 22px;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #526448;
+        font-size: 14px;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #a8b89a;
+    }
+
+    /* GENERAL SECTION */
+
+    section {
+        min-height: 100vh;
+        padding: 120px 10% 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+    }
+
+    h1 {
+        font-size: clamp(50px, 8vw, 100px);
+        margin-bottom: 20px;
+        color: #40513b;
+    }
+
+    h2 {
+        font-size: clamp(35px, 5vw, 60px);
+        margin-bottom: 25px;
+        color: #526448;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.8;
+        max-width: 750px;
+    }
+
+    /* WELCOME */
+
+    #home {
+        background:
+        radial-gradient(circle at top left, #e7eee1, transparent 40%),
+        radial-gradient(circle at bottom right, #d9e5d3, transparent 40%),
+        #f7f8f2;
+    }
+
+    .matcha {
+        font-size: 55px;
+        animation: float 3s ease-in-out infinite;
+    }
+
+    .subtitle {
+        font-size: 20px;
+        margin-bottom: 35px;
+        color: #6d7e65;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    button {
+        padding: 16px 38px;
+        border-radius: 50px;
+        border: 2px solid #6f8563;
+        background: transparent;
+        color: #40513b;
+        font-weight: bold;
+        letter-spacing: 1px;
+        cursor: pointer;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+    #yesBtn:hover {
+        background: #a8b89a;
+        color: white;
+        transform: scale(1.05);
+    }
+
+    #noBtn {
+        position: relative;
+    }
+
+    /* FLOATING DECORATIONS */
+
+    .floating {
+        position: absolute;
+        font-size: 30px;
+        animation: float 4s ease-in-out infinite;
+        opacity: 0.7;
+    }
+
+    .f1 { top: 20%; left: 10%; }
+    .f2 { bottom: 20%; right: 12%; animation-delay: 1s; }
+    .f3 { top: 30%; right: 8%; animation-delay: 2s; }
+
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0px);
+        }
+
+        50% {
+            transform: translateY(-15px);
+        }
+    }
+
+    /* MEMORIES */
+
+    #memories {
+        background: #edf2e9;
+    }
+
+    .photo-container {
+        display: flex;
+        gap: 45px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 35px;
+    }
+
+    .polaroid {
+        background: white;
+        padding: 15px 15px 30px;
+        width: 280px;
+        box-shadow: 0 10px 30px rgba(64, 81, 59, 0.15);
+        transform: rotate(-3deg);
+        transition: 0.4s;
+    }
+
+    .polaroid:nth-child(2) {
+        transform: rotate(3deg);
+    }
+
+    .polaroid:hover {
+        transform: rotate(0deg) scale(1.05);
+    }
+
+    .polaroid img {
+        width: 100%;
+        height: 330px;
+        object-fit: cover;
+    }
+
+    .polaroid p {
+        font-size: 14px;
+        margin-top: 15px;
+        font-style: italic;
+    }
+
+    /* ANNIVERSARY */
+
+    #anniversary {
+        background:
+        linear-gradient(rgba(247,248,242,0.85),
+        rgba(247,248,242,0.85)),
+        #dce7d7;
+    }
+
+    .number {
+        font-size: clamp(70px, 10vw, 150px);
+        font-weight: bold;
+        color: #9aad8f;
+        line-height: 1;
+    }
+
+    .months {
+        font-size: 22px;
+        margin-bottom: 25px;
+        letter-spacing: 4px;
+    }
+
+    .love-text {
+        background: white;
+        padding: 35px;
+        border-radius: 25px;
+        box-shadow: 0 10px 30px rgba(64, 81, 59, 0.1);
+        margin-top: 25px;
+    }
+
+    /* GARDEN */
+
+    #garden {
+        background: #dfe9da;
+    }
+
+    .garden-items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 40px;
+    }
+
+    .flower {
+        width: 170px;
+        height: 170px;
+        border-radius: 50%;
+        background: #f7f8f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        font-size: 60px;
+        cursor: pointer;
+        box-shadow: 0 8px 20px rgba(64, 81, 59, 0.12);
+        transition: 0.4s;
+    }
+
+    .flower:hover {
+        transform: translateY(-12px) rotate(5deg);
+        background: #cad8c3;
+    }
+
+    .flower span {
+        font-size: 12px;
+        margin-top: 10px;
+        color: #526448;
+    }
+
+    #messageBox {
+        margin-top: 35px;
+        min-height: 70px;
+        font-size: 19px;
+        color: #40513b;
+        font-style: italic;
+    }
+
+    /* SONG */
+
+    #song {
+        background: #f7f8f2;
+    }
+
+    .song-card {
+        background: #a8b89a;
+        color: white;
+        padding: 50px;
+        border-radius: 30px;
+        max-width: 600px;
+        width: 100%;
+        box-shadow: 0 15px 40px rgba(64, 81, 59, 0.2);
+    }
+
+    .song-card h3 {
+        font-size: 32px;
+        margin-bottom: 10px;
+    }
+
+    .song-card p {
+        font-size: 17px;
+        margin: 15px auto;
+    }
+
+    .music-note {
+        font-size: 70px;
+        animation: float 3s infinite;
+    }
+
+    /* LETTER */
+
+    #letter {
+        background:
+        radial-gradient(circle at center, #eef4e9, #d8e4d2);
+    }
+
+    .envelope {
+        width: min(700px, 90vw);
+        background: #fffdf7;
+        padding: 50px;
+        border-radius: 25px;
+        box-shadow: 0 20px 50px rgba(64, 81, 59, 0.18);
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .envelope:hover {
+        transform: translateY(-8px);
+    }
+
+    .letter-content {
+        display: none;
+        margin-top: 25px;
+        animation: fadeIn 1s;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .open-text {
+        font-size: 20px;
+        margin-top: 15px;
+        color: #74866b;
+    }
+
+    /* FINAL */
+
+    #ending {
+        min-height: 80vh;
+        background: #a8b89a;
+        color: white;
+    }
+
+    #ending h2,
+    #ending p {
+        color: white;
+    }
+
+    .heart {
+        font-size: 45px;
+        animation: float 2.5s infinite;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 700px) {
+
+        nav ul {
+            display: none;
+        }
+
+        nav {
+            justify-content: center;
+        }
+
+        section {
+            padding: 100px 6% 60px;
+        }
+
+        .photo-container {
+            gap: 30px;
+        }
+
+        .polaroid {
+            width: 260px;
+        }
+
+        .song-card {
+            padding: 35px 25px;
+        }
+
+        .envelope {
+            padding: 35px 25px;
+        }
+    }
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+
+<nav>
+    <div class="logo">Koko ♡ Bby</div>
+
+    <ul>
+        <li><a href="#home">Hello</a></li>
+        <li><a href="#memories">Us</a></li>
+        <li><a href="#anniversary">1year&8months</a></li>
+        <li><a href="#garden">Garden</a></li>
+        <li><a href="#song">Song</a></li>
+        <li><a href="#letter">Letter</a></li>
+    </ul>
+</nav>
+
+
+<!-- HOME -->
+
+<section id="home">
+
+    <div class="floating f1">🌿</div>
+    <div class="floating f2">🤍</div>
+    <div class="floating f3">🍃</div>
+
+    <div class="matcha">🍵</div>
+
+    <h1>Hiii Koko! ♡</h1>
+
+    <p class="subtitle">
+        I have something special for you... heheh
+        <br>
+        Do you want to see it?
+    </p>
+
+    <div class="buttons">
+
+        <button id="yesBtn">
+            YES, BBY 💚
+        </button>
+
+        <button id="noBtn">
+            NO THANKS 🙄
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- MEMORIES -->
+
+<section id="memories">
+
+    <h2>Our Little Memories 📸</h2>
+
+    <p>
+        Just two pictures, but somehow they hold so many memories. ♡
+    </p>
+
+    <div class="photo-container">
+
+        <div class="polaroid">
+
+            <!-- CHANGE photo1.jpg TO YOUR FIRST PHOTO -->
+
+            <img src="U.jpg" alt="Koko and Bby">
+
+            <p>
+                One of my favourite memories with you ♡
+            </p>
+
+        </div>
+
+
+        <div class="polaroid">
+
+            <!-- CHANGE photo2.jpg TO YOUR SECOND PHOTO -->
+
+            <img src="s.jpg" alt="Koko and Bby">
+
+            <p>
+                And hopefully, one of many more to come. 🍵💚
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ANNIVERSARY -->
+
+<section id="anniversary">
+
+    <div class="number">1.8</div>
+
+    <div class="months">
+        YEARS & MONTHS WITH MY KOKO ♡
+    </div>
+
+    <h2>20 Months of Us</h2>
+
+    <div class="love-text">
+
+        <p>
+            20 months of memories, pyor syr twy ll myrr gye pl, wan nel ya tr twy ll shi khae tl,
+            arguments twy yww pl but br twy pl pyit khae pyit khae bby kokoh ko chik tk a chik twy ka 
+            ma pyoungg lel twr pr buu nw KOKO
+            <br><br>
+            br pl pyit pyit 
+            <br>
+            ♡ Koko ka bby yae HERO pr pl nw ♡
+            <br><br>
+            Bby kokoh nrr mhr a myel shi ny chin tl Koko. ♡
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- GARDEN -->
+
+<section id="garden">
+
+    <h2>A Little Garden For My Koko 🌷</h2>
+
+    <p>
+        Click the flowers and leaves. I left little messages for you. ♡
+    </p>
+
+    <div class="garden-items">
+
+        <div class="flower"
+        onclick="showMessage('Thank you for always being you, Koko. ♡')">
+
+            🌷
+
+            <span>click me!</span>
+
+        </div>
+
+
+        <div class="flower"
+        onclick="showMessage('My favourite place will always be wherever you are koko. 🍃')">
+
+            🍃
+
+            <span>click me!</span>
+
+        </div>
+
+
+        <div class="flower"
+        onclick="showMessage('I hope we make many, many more memories together nw nw . 🌼')">
+
+            🌼
+
+            <span>click me!</span>
+
+        </div>
+
+
+        <div class="flower"
+        onclick="showMessage('You will always have a special place in my heart papa. 🤍')">
+
+            🌿
+
+            <span>click me!</span>
+
+        </div>
+
+    </div>
+
+    <div id="messageBox">
+        ♡
+    </div>
+
+</section>
+
+
+<!-- SONG -->
+
+<section id="song">
+
+    <h2>Our Song 🎧</h2>
+
+    <div class="song-card">
+
+        <div class="music-note">🎵</div>
+
+        <h3>Hold Me Down</h3>
+
+        <p>Daniel Caesar</p>
+
+        <p>
+            D song lyy ko kyr tine bby toh sa twel khae tone ka 
+            a chain twy ko tha di ya mi tl thi lr koko♡
+        </p>
+
+        <audio controls>
+    <source src="daniel.mp3" type="audio/mpeg">
+</audio>
+
+    </div>
+
+</section>
+
+
+<!-- LETTER -->
+
+<section id="letter">
+
+    <h2>A Letter For My KOKO💌</h2>
+
+    <div class="envelope" onclick="openLetter()">
+
+        <div id="closedLetter">
+
+            <div style="font-size: 70px;">
+                💌
+            </div>
+
+            <h3 style="font-size: 30px; margin-top: 15px;">
+                One Last Thing, Koko...
+            </h3>
+
+            <p class="open-text">
+                Click to open ♡
+            </p>
+
+        </div>
+
+
+        <div class="letter-content" id="letterContent">
+
+            <p>
+                BBy yae Koko yy,
+                <br><br>
+
+                Happy 1 year and 8 months to us pr nw. ♡
+                <br><br>
+
+                bby d lo lyy twy loke pyy yin koko kyte ml htin loh 
+                heheh bby exam nee tr tg kokoh twt a chain pyy htr tr.
+                20 months so tr ma nel buu nw koko bby toh a tutu shi lr tr kyi pr oon
+                d gyr htl bby soe khae tr lyy twy ko ll a myel nrr lel thee khn pyy loh bby ka a myr gye po chik ya pr tl bby's koko yl
+                KOKO thr bby nrr mhr a myel shi ny pyy yin ly bby br pl pyit pyit bby pyor tl, KOKO nk shi ny ya tr ko bby ka pyor tr pr 
+                koko thi lr hin. bby nrr mr a myel shi ny pyy pr nw bby ko ll htr ma twr pr nk nw koko, kokoh nrr mhr ll bby myel tann shi ny 
+                pyy pa ya syy nw koko 
+                and 
+                bby kokoh sie ko yuk ag lr pa ml nw bby's koko
+                bby ka myr gye po chik twr pa ml loh promise pyy pr dl shint ♡
+                PINKY PROMISEEEEEEEEEE HEHEHEH ♡
+        
+                <br><br>
+
+                Thank you for being my Koko.
+                Thank you for all the memories
+                we've made together.
+                <br><br>
+
+                I don't know exactly what to do without youu koko,
+                I MISSSS YOUUUU SOOOO MUCHHHHHHHHH
+
+                BBy chik pyy tha luk koko pyn chik pyy nai yin tgl pyor mi mr pl but it's okayyy koko 
+                
+                <br><br>
+
+                Happy 1 year and 8 months, Koko.
+                <br><br>
+
+                Love,
+                <br>
+
+                <strong>Your Bby E tonee heehe♡ </strong>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ENDING -->
+
+<section id="ending">
+
+    <div class="heart">♡</div>
+
+    <h2>
+        Happy 1 Year & 8 Months,
+        Koko!
+    </h2>
+
+    <p>
+        Here's to more memories,
+        more laughs,
+        more random moments,
+        and hopefully many more months of us. 🍵💚
+        <br><br>
+        Love you,
+        <br>
+        <strong>Your Bby ♡</strong>
+    </p>
+
+</section>
+
+
+<script>
+
+    /* YES BUTTON */
+
+    document.getElementById("yesBtn").addEventListener("click", function() {
+
+        document.getElementById("memories")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+
+    });
+
+
+    /* MOVING NO BUTTON */
+
+    const noBtn = document.getElementById("noBtn");
+
+    noBtn.addEventListener("mouseover", moveButton);
+    noBtn.addEventListener("click", moveButton);
+
+    function moveButton() {
+
+        const x = Math.random() * 250 - 125;
+        const y = Math.random() * 150 - 75;
+
+        noBtn.style.transform =
+        `translate(${x}px, ${y}px)`;
+
+    }
+
+
+    /* GARDEN MESSAGES */
+
+    function showMessage(message) {
+
+        const box =
+        document.getElementById("messageBox");
+
+        box.style.opacity = "0";
+
+        setTimeout(() => {
+
+            box.innerHTML = message;
+
+            box.style.transition = "0.5s";
+            box.style.opacity = "1";
+
+        }, 200);
+
+    }
+
+
+    /* OPEN LETTER */
+
+    function openLetter() {
+
+        document.getElementById("closedLetter")
+        .style.display = "none";
+
+        document.getElementById("letterContent")
+        .style.display = "block";
+
+    }
+
+</script>
+
+</body>
+</html>
