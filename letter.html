@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Little Love Letter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="hearts" aria-hidden="true">
+    <span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span>
+    <span>♥</span><span>♥</span><span>♥</span>
+  </div>
+
+  <input class="toggle" type="checkbox" id="open-letter">
+
+  <main class="page">
+
+    <section class="intro">
+      <label class="envelope" for="open-letter">
+        <span class="envelope-flap"></span>
+        <span class="envelope-heart">♥</span>
+      </label>
+
+      <p class="from-line">♥ From Irfan For You ♥</p>
+      <p class="little-note">Cupid never misses twice ♡ ♥</p>
+      <label class="open-hint" for="open-letter">
+        Tap the envelope to open
+      </label>
+    </section>
+
+    <section class="letter-area">
+
+      <input class="toggle" type="checkbox" id="say-yes">
+
+      <div class="letter-card">
+
+        <header class="window-header">
+          <span>LOVE</span>
+          <div class="window-controls">
+            <i></i><i></i><i></i>
+          </div>
+        </header>
+
+        <div class="mini-hearts">♥ · ♥ · ♥</div>
+
+        <div class="question-content">
+          <h1>Do you want to be my<br>forever person? ♡</h1>
+
+          <div class="pixel-heart">♥</div>
+
+          <div class="answers">
+            <button class="no-button" type="button"
+              onclick="this.textContent='Are you sure?';">
+              NO
+            </button>
+
+            <label class="yes-button" for="say-yes">
+              YES
+            </label>
+          </div>
+        </div>
+
+        <div class="success-content">
+          <h1>Yayyy! I love you ♡</h1>
+
+          <div class="pixel-heart happy">♥</div>
+
+          <p>I'm really happy you accept me</p>
+          <p class="love-you">I LOVE YOU KoKo♥</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>
